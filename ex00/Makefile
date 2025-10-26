@@ -1,6 +1,6 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = ClapTrap.cpp main.cpp
+SRCS = Animal.cpp main.cpp Cat.cpp Dog.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 NAME = Animal
