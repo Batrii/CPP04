@@ -9,6 +9,12 @@ Character::Character()
         this->inv[i] = NULL;
         i++;
     }
+    i = 0;
+    while (i < 1024)
+    {
+        this->backup[i] = NULL;
+        i++;
+    }
     std::cout << "Character default constructor" << std::endl;
 }
 Character::Character(const std::string name)
@@ -18,6 +24,12 @@ Character::Character(const std::string name)
     while (i < 4)
     {
         this->inv[i] = NULL;
+        i++;
+    }
+    i = 0;
+    while (i < 1024)
+    {
+        this->backup[i] = NULL;
         i++;
     }
     std::cout << "Character constructor called" << std::endl;
@@ -80,11 +92,31 @@ void Character::equip(AMateria* m)
 }
 void Character::unequip(int idx)
 {
-
+    if (idx < 0 || idx >= 4)
+    {
+        std::cout << "Incorrect index." << std::endl;
+        return ;
+    }
+    if (this->inv[idx] != NULL)
+    {
+        int i = 0;
+        while (i < 1024)
+        {
+            if (this->backup[i] == NULL)
+            {
+                this->backup[i] = this->inv[idx];
+                break;
+            }
+            i++;
+        }
+        this->inv[idx] = NULL;
+    }
+    else
+        std::cout << "there is no object in this index" << std::endl;
 }
 void Character::use(int idx, ICharacter& target)
 {
-    if (this->inv[idx] != NULL)
+    if ((idx >= 0 && idx <= 3) && this->inv[idx] != NULL)
         this->inv[idx]->use(target);
     else
         std::cout << "i can do nothing" << std::endl;
@@ -96,6 +128,13 @@ Character::~Character()
     {
         if (this->inv[i] != NULL)
             delete (this->inv[i]);
+        i++;
+    }
+    i = 0;
+    while (i < 1024)
+    {
+        if (this->backup[i] != NULL)
+            delete (this->backup[i]);
         i++;
     }
     std::cout << "Character destructor called" << std::endl;

@@ -9,6 +9,7 @@ class Character : public ICharacter
     private:
         std::string name;
         AMateria* inv[4];
+        AMateria* backup[1024];
     public:
         Character();
         Character(const std::string name);

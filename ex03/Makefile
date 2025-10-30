@@ -1,9 +1,9 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = Animal.cpp main.cpp Cat.cpp Dog.cpp Brain.cpp
+SRCS = main.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp AMateria.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = Animal
+NAME = ex03
 
 all: $(NAME)
 

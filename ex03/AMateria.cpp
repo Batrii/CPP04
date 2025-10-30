@@ -2,6 +2,7 @@
 
 AMateria::AMateria()
 {
+    this->type = "no type yet";
     std::cout << "AMateria default constrcutor called." << std::endl;
 }
 AMateria::AMateria(std::string const & type)
@@ -29,4 +30,8 @@ AMateria::~AMateria()
 std::string const & AMateria::getType() const
 {
     return this->type;
+}
+void AMateria::use(ICharacter& target)
+{
+    std::cout << "* default use of AMateria " << target.getName() << std::endl;
 }

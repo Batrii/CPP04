@@ -2,7 +2,7 @@
 
 Cure::Cure()
 {
-    this->type = "Cure";
+    this->type = "cure";
     std::cout << "Cure default constructor  called" << std::endl;
 }
 Cure::Cure(const Cure& other)
@@ -28,5 +28,5 @@ AMateria* Cure::clone() const{
 }
 
 void Cure::use(ICharacter& target){
-    std::cout << "* shoots an ice bolt at" << target.getName() << " *" << std::endl;
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
