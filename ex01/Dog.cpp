@@ -27,8 +27,8 @@ Dog::~Dog()
 {
     delete this->brain;
     std::cout << "Dog destructor called" << std::endl;
-};
+}
 void Dog::makeSound() const
 {
     std::cout << "Woof Woof" << std::endl;
-};
+}

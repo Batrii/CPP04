@@ -16,7 +16,7 @@ Brain::Brain(const Brain& other)
         i++;
     }
     std::cout << "Brain copy constructor called" << std::endl;
-};
+}
 Brain& Brain::operator=(const Brain& other)
 {
     if (this != &other)
@@ -30,7 +30,7 @@ Brain& Brain::operator=(const Brain& other)
     }
     std::cout << "Brain assignement operator called" << std::endl;
     return (*this);
-};
+}
 Brain::~Brain()
 {
     std::cout << "Brain destructor called" << std::endl;
