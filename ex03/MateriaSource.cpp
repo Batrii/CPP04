@@ -63,6 +63,13 @@ void MateriaSource::learnMateria(AMateria* obj)
     int i = 0;
     while (i < 4)
     {
+        if (this->inve[i] == obj)
+            return ;
+        i++;
+    }
+    i = 0;
+    while (i < 4)
+    {
         if (this->inve[i] == NULL)
         {
             this->inve[i] = obj;

@@ -83,6 +83,18 @@ void Character::equip(AMateria* m)
     {
         if (this->inv[i] == m)
             return ;
+        i++;
+    }
+    i = 0;
+    while (i < 4)
+    {
+        if (this->backup[i] == m)
+            return ;
+        i++;
+    }
+    i = 0;
+    while (i < 4)
+    {
         if (this->inv[i] == NULL)
         {
             this->inv[i] = m;
